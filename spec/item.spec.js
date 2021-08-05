@@ -50,5 +50,5 @@ describe("Item class", function() {
 		// TODO #2: Practice TDD and write test before adding code to constructor
     expect(() => new Item("notebook")).toThrow(new Error("Name of location is required!"));
 	});
-
+	
 });
