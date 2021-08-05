@@ -35,11 +35,20 @@ class Backpack {
 	// Write a method that places an object into its correct backpack compartment
 	addToBackpack(item) {
 		// TODO #3-5: practice TDD and code this in parts as you write tests
+		if (item.location === "front pocket") {
+			this.frontPocket.push(item);
+		} else if (item.location === "side pocket") {
+			this.sidePocket = item;
+		} else {
+			item.location = "main compartment";
+			this.main.push(item);
+		}
 	}
 
 	// 	Write a function to serve as a helper function to findItemInBackpack()
 	findItemInArray(item, array) {
 		// TODO #6-7: practice TDD and code this in parts as you write tests
+		return array.indexOf(item);
 	}
 
 	// 	Write a method that finds an item and returns the compartment. 

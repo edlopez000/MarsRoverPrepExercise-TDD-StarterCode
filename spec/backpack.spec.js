@@ -72,6 +72,15 @@ describe("Backpack class", function() {
 
 	it("can add items to a backpack object using the class's addToBackpack() method", function() {
 		// TODO #3: write a test and let it inform how you code the method
+		item1 = new Item("textbook", "main compartment");
+		item2 = new Item("pencil", "front pocket");
+		item3 = new Item("water bottle", "side pocket");
+		myBackpack = new Backpack(item1, item2, item3);
+
+		expect(myBackpack.main).toEqual(item1);
+		expect(myBackpack.frontPocket).toEqual(item2);
+		expect(myBackpack.sidePocket).toEqual(item3);
+
 	});
 
 	/* 
@@ -82,6 +91,11 @@ describe("Backpack class", function() {
 
 	it("can add item to a backpack object using the class's addToBackpack() method", function() {
 		// TODO #4: write a test and let it inform how you code the method
+		myBackpack = new Backpack();
+		item1 = new Item("textbook", "main compartment");
+		myBackpack.addToBackpack(item1);
+
+		expect(myBackpack.main).toEqual([item1]);
 	});
 
 	/* 
@@ -93,6 +107,11 @@ describe("Backpack class", function() {
 		
 	it("can assign location to item using addToBackpack() method if location was null", function() {
 		// TODO #5: write a test and let it inform how you code the method
+		myBackpack = new Backpack();
+		let item1 = new Item("notebook", null);
+		myBackpack.addToBackpack(item1);
+
+		expect(myBackpack.main).toEqual([item1]);
 	});
 
 
@@ -104,10 +123,23 @@ describe("Backpack class", function() {
 
 	it("should return index of item that is located in an array", function() {
 		// TODO #6: write a test and let it inform how you code the method
+		let arr = [5, 9, 2, 7];
+		let expected = arr.indexOf(7);
+		myBackpack = new Backpack();
+		let actual = myBackpack.findItemInArray(7, arr);
+
+		expect(expected).toEqual(actual);
+
 	});
 
 	it("should return -1 if item is not found in array", function() {
 		// TODO #7: write a test and let it inform how you code the method
+		let arr = [5, 9, 2, 7];
+		let expected = arr.indexOf(4);
+		myBackpack = new Backpack();
+		let actual = myBackpack.findItemInArray(4, arr);
+
+		expect(expected).toEqual(actual);
 	});
 
 

@@ -12,14 +12,14 @@ class Item {
 		// TODO #1: add location property
     	this.location = location;
 		// TODO #2: add error handling for location property
-    	if (!location) {
+    	if (location === null){
+			location = null;
+		}
+		else if (!location) {
       		throw Error("Name of location is required!");
-    	}
+		}
 		// ok to pass in 'null' as an argument, but not to leave out argument entirely
 	}
-
-	
-
 }
 
 module.exports = Item;
